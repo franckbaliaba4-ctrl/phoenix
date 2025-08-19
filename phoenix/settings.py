@@ -15,7 +15,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.phoenixgroup.cm', 'phoenixgroup.cm']
+ALLOWED_HOSTS = ['www.phoenixgroup.cm', 'phoenixgroup.cm', 'phoenix-fub7.onrender.com', 'www.phoenix-fub7.onrender.com']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 SITE_ID = 1
