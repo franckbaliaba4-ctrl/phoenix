@@ -1,0 +1,18 @@
+
+.test1{ font-family: Arial, sans-serif; margin: 40px; }
+
+.titre{ color: #333; }
+
+.subsidiary { margin-bottom: 20px; }
+
+.subsidiary h3 { margin: 0; }
+
+.subsidiary a { color: #007BFF; text-decoration: none; }
+
+.subsidiary a:hover { text-decoration: underline; }
+
+.slide{
+  text-align:center;
+}
+
+/*#007BFF*/

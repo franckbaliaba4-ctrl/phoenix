@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Group</title>
+<style>
+
+body{ font-family: Arial, sans-serif; margin: 40px; background-color:white; }
+
+.titre{ color: #333; }
+
+.subsidiary { margin-bottom: 20px; }
+
+.subsidiary h3 { margin: 0;  }
+
+.subsidiary a { color: #007BFF; text-decoration: none; }
+
+.subsidiary a:hover { text-decoration: underline; }
+
+.slide{
+  text-align:center;
+  margin-top: 160px;
+}
+  button{
+    display: inline-block;
+    width:450px;
+    height:30px;
+    font-size:20px;
+    border-radius: 8px;
+    background-color: white;
+    color:white;
+    margin-top:25px;
+    }
+</style>
+</head>
+<body>
+
+<div class="slide">
+
+    <h1 class="titre">Bienvenue sur le portail Phoenix Group</h1>
+    <p>Phoenix Group est une entreprise qui regroupe plusieurs filiales offrant des services variés.</p>
+
+    {% for subsidiary in subsidiaries %}
+    <div class="subsidiary">
+        <h2>{{ subsidiary.name }}</h2>
+        <p>{{ subsidiary.description }}</p>
+        <button>
+        <a href="{{ subsidiary.url }}" target="_blank">Visiter le site de {{ subsidiary.name }}</a>
+
+        </button>
+    </div>
+    {% empty %}
+    <p>Aucune filiale disponible pour le moment.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
+
+

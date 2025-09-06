@@ -13,10 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.phoenixgroup.cm', 'phoenixgroup.cm', 'phoenix-fub7.onrender.com', 'www.phoenix-fub7.onrender.com']
-#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+#ALLOWED_HOSTS = ['www.phoenixgroup.cm', 'phoenixgroup.cm', 'phoenix-fub7.onrender.com', 'www.phoenix-fub7.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 SITE_ID = 1
 
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phoenixe'
 ]
 
 MIDDLEWARE = [
