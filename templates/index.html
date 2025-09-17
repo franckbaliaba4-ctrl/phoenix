@@ -2,9 +2,13 @@
 
 {% load static %}
 
-{% block title %} Phoenix - Experts en construction & remodelage de stations-service. {% endblock title %}
+{% block title %} PhoenixGroup - Experts en construction & remodelage de stations-service. {% endblock title %}
   
+{% block rex %}
+  <link rel="stylesheet" href="{% static 'css/modal.css'  %}">
+  <link href="{% static 'css/rex.css' %}" rel="stylesheet">
 
+{% endblock rex %}
 {% block content %}
 
   <main class="main">
@@ -17,18 +21,35 @@
         <div class="carousel-item active">
           <img src="{% static 'img/hero-carousel/bequaire-1.jpg' %}" alt="Hero Carousel 1">
           <div class="carousel-container">
-            <h2>Stations d'avenir</h2>
-            <p>Nous concevons et construisons des stations-service modernes, performantes et durables, alliant efficacité opérationnelle, normes techniques, environnementales et un design contemporain pour répondre aux exigences du secteur pétrolier.</p>
-            <a href="/#services" class="btn-get-started">Nos Services</a>
+
+
+                <h2>Bienvenue sur le portail Phoenix Group</h2>
+                <p>Phoenix Group est une entreprise qui regroupe plusieurs filiales offrant des services variés.</p>
+
+                {% for subsidiary in subsidiaries %}
+                <div class="subsidiary">
+                    <h3>{{ subsidiary.name }}</h3>
+                    <h5>{{ subsidiary.description }}</h5>
+                    <button>
+                    <a href="{{ subsidiary.url }}" target="_blank"  >Visiter le site de {{ subsidiary.name }}</a>
+
+                    </button>
+                </div>
+                {% empty %}
+                <p>Aucune filiale disponible pour le moment.</p>
+                {% endfor %}
+
           </div>
         </div><!-- End Carousel Item -->
 
         <div class="carousel-item">
           <img src="{% static 'img/hero-carousel/bequaire-2.jpg' %}" alt="Hero Carousel 2">
-          <div class="carousel-container">
-            <h2>Excellence technique</h2>
+         <div class="carousel-container">
+            <!-- <h2>Excellence technique</h2>
             <p>Chaque projet est piloté par une équipe d'experts maîtrisant les enjeux techniqus, réglementaires et logistiques. Nous garantissons une éxucution rigoureuse, sécurisée et conforme aux standards les plus exigeants.</p>
-            <a href="/#portfolio" class="btn-get-started">Nos Réalisations</a>
+            <a href="/#portfolio" class="btn-get-started">Nos Réalisations</a> -->
+
+
           </div>
         </div><!-- End Carousel Item -->
 
@@ -53,7 +74,7 @@
 
       </div>
 
-    </section><!-- /Hero Section -->
+    </section> <!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -353,7 +374,7 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
-              <p>BP: 7535 DLA</p>
+              <p>BP: 7535 DLA NDOGBONG entrée  <br> chefferie en face de l'hôtel  pentagone</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -369,7 +390,7 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-envelope"></i>
               <h3>Envoyer-nous un mail</h3>
-              <p>ceo@phoenixgroup.cm</p>
+              <p>infos@phoenixgroup.cm</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -426,7 +447,8 @@
             <a href="#">
               <div class="partner-item">
               <div class="w-100 d-flex justify-content-center">
-                <img class="img-fluid" src="{% static 'img/partners/pompe_engine_oil_partenaire.jpg' %}" alt="Pompe Engine Oil Partenaire">
+                <img class="img-fluid" src="{% static 'img/partners/engine_oil_partenaire.jpg' %}" alt="Pompe Engine Oil Partenaire">
+
               </div>
               <div>
                 <h4 class="title">Engine Oil</h4>
@@ -439,6 +461,7 @@
               <div class="partner-item">
               <div class="w-100 d-flex justify-content-center">
                 <img class="img-fluid" src="{% static 'img/partners/pompe_petrolink_partenaire.jpg' %}" alt="Pompe Petrolink Partenaire">
+
               </div>
               <div>
                 <h4 class="title">Petrolink</h4>
@@ -450,7 +473,7 @@
             <a href="#">
               <div class="partner-item">
               <div class="w-100 d-flex justify-content-center">
-                <img class="img-fluid" src="{% static 'img/partners/pompe_venus_partenaire.jpg' %}" alt="Pompe Venus Partenaire">
+                <img class="img-fluid" src="{% static 'img/partners/venus_partenaire.jpg' %}" alt="Pompe Venus Partenaire">
               </div>
               <div>
                 <h4 class="title">Venus</h4>
@@ -513,12 +536,12 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="/" class="logo d-flex align-items-center">
-            <span class="sitename">Phoenix</span>
+            <span class="sitename">PhoenixGroup</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>BP: 7535 DLA</p>
+            <p>BP: 7535 DLA <span> NDOGBONG entrée <br> chefferie  en face de l'hôtel  pentagone</span> </p>
             <p class="mt-3"><strong>Téléphone:</strong> <span>+ 237 233 41 28 09</span></p>
-            <p><strong>Adresse mail:</strong> <span>ceo@phoenixgroup.cm</span></p>
+            <p><strong>Adresse mail:</strong> <span>infos@phoenixgroup.cm</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -554,7 +577,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Phoenix</strong> <span>Tous droits réservés</span></p>
+      <p>© <span>Copyright 2025</span> <strong class="px-1 sitename">PhoenixGroup</strong> <span>Tous droits réservés</span></p>
       <div class="credits">
         Created by <a href="https://discom-group.com" target="_blank">DISCOM SARL</a>
       </div>
@@ -563,4 +586,4 @@
   </footer>
 
 {% endblock footer %}
-  
+

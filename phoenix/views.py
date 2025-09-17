@@ -5,11 +5,15 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
 from django.views.generic import TemplateView
 import json
+
+
+# In gallery_app/views.py:
+import os
+from django.shortcuts import render
 from django.conf import settings
 
-from django.shortcuts import render
 
-from django.shortcuts import render
+
 
 
 def rex(request):
@@ -73,7 +77,31 @@ class RobotsTxtView(TemplateView):
 
 
 def index(request):
-    return render(request, "index.html")
+    subsidiaries = [
+        {
+            'name': 'Phoenix Express Service',
+            'description': 'Une filiale de Phoenix Group offrant des services de transport rapides et fiables.',
+            'url': 'https://www.phoenixexpressservice.com'
+        },
+        {
+            'name': 'Blue Sky Technology',
+            'description': 'Une entreprise innovante spécialisée dans les solutions technologiques.',
+            'url': 'https://www.blueskytechnology.com'
+        },
+    ]
+    pdg_message = "Ceci est un message inspirant du PDG pour l'équipe Phoenix Group."
+    photo_url = "static/img/about-company-1.jpg"
+    speech = "Je suis fier de diriger cette équipe vers de nouveaux horizons. Ensemble, nous réussirons !"
+
+    context = {
+        'subsidiaries': subsidiaries,
+        'pdg_message': pdg_message,
+        'photo_url': photo_url,
+        'speech': speech,
+    }
+
+
+    return render(request, "index.html", context)
 
 
 def contact(request):
@@ -93,3 +121,13 @@ def contact(request):
 
 def page404(request, exception):
     return render(request, "404.html")
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+
+body{ font-family: Arial, sans-serif; background-color:white; }
+
+.titre{ color: #333; }
+
+.subsidiary { margin-bottom: 20px; }
+
+.subsidiary h3 { margin: 0;  }
+
+.subsidiary h5 { margin: 5px;  font-size:19px;}
+
+.subsidiary a { color: #007BFF; text-decoration: none;}
+
+.subsidiary a:hover { text-decoration: underline; }
+
+.slide{
+  text-align:center;
+  margin-top: 160px;
+}
+  button{
+    display: inline-block;
+    width:450px;
+    height:40px;
+    font-size:20px;
+    border-radius: 8px;
+    background-color: white;
+    color:white;
+    margin-top:25px;
+    }

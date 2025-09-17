@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.container {
+    max-width: 800px;
+}
+h1, h2 {
+    color: #333;
+}
